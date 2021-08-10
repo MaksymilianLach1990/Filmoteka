@@ -7,7 +7,7 @@ app.config["ENV"] = "development"
 
 @app.route('/')
 def homepage():
-    movies = ["Spider-man", "Batman", "Red", "Superman", "Transformens", "Drakula"]
+    movies = ["Spider-man", "Batman", "Red", "Superman"]
     return render_template("homepage.html", movies=movies)
 
 

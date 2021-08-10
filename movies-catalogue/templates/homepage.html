@@ -7,12 +7,12 @@
        <h1 class="mt-5">Welcome to my movie library</h1>
        <p class="lead">Only the best titles can be found here!</p>
    </div>
-   {% for movie in movies %}
+   {% for number in range(4) %}
    <div class="col-lg-3 col-md-6 mb-4">
        <div class="card h-100">
            <img class="card-img-top" src="http://placehold.it/300x500" alt="">
            <div class="card-body">
-               <h4 class="card-title">{{movie}}</h4>
+               <h4 class="card-title">{{movies[number]}}</h4>
                <p class="card-text">Opis</p>
            </div>
            <div class="card-footer text-center">
