@@ -1,0 +1,25 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div style="text-align: center; color: white">
+    <h1>Please contact me.</h1>
+    <table>
+        <td>
+            <ul><strong>First name</strong><br>Krzysztof</ul>
+            <ul><strong>Last name</strong><br>Lach</ul>
+            <ul><strong>Email</strong><br>lach.krzysztof56@gmail.com</ul>
+        </td>
+    </table>
+    <div style="color: black;">
+        <form action="" method="POST">
+            <label>First Name</label><br>
+            <input name="firstname"/><br>
+            <label>E-mail</label><br>
+            <input name="email"/><br>
+            <label>Message</label><br>
+            <input name="message"/><br>
+            <input type="submit"/>
+        </form>
+    </div>
+</div>
+{% endblock %}
