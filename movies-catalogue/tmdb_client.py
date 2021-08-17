@@ -6,12 +6,16 @@ API_TOKEN = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmODczYzQ1MDc3YTNiOWE5ZjFhNjVlMjYyOD
             "tG9eGN-EiyP_Z8cm5R9NhVA"
 
 
-def get_popular_movies():
-    endpoint = "https://api.themoviedb.org/3/movie/popular"
+def get_movies_list(list_type):
+    categories = ["popular", "now_playing", "upcoming", "top_rated"]
+    if list_type not in categories:
+        list_type = 'popular'
+    endpoint = f"https://api.themoviedb.org/3/movie/{list_type}"
     headers = {
         "Authorization": f"Bearer {API_TOKEN}"
     }
     response = requests.get(endpoint, headers=headers)
+    response.raise_for_status()
     return response.json()
 
 
@@ -21,8 +25,9 @@ def get_poster_url(poster_api_path, size="w342"):
     return f"{base_url}{size}/{poster_api_path}"
 
 
-def get_movies(how_many):
-    data = get_popular_movies()
+def get_movies(how_many, list_type='popular'):
+    data = get_movies_list(list_type)
+    print(data)
     return data["results"][:how_many]
 
 
