@@ -8,8 +8,10 @@ app.config["ENV"] = "development"
 
 @app.route('/')
 def homepage():
-    movies = tmdb_client.get_movies(how_many=8)  # lista filmów / ilość okienek
-    return render_template("homepage.html", movies=movies)  # strona głowna
+    categories = ["popular", "now_playing", "upcoming", "top_rated"]
+    selected_list = request.args.get('list_type', "popular")
+    movies = tmdb_client.get_movies(how_many=8, list_type=selected_list)
+    return render_template("homepage.html", movies=movies, current_list=selected_list, categories=categories)
 
 
 @app.context_processor
