@@ -1,9 +1,7 @@
 # tworzenia połączenia z serwerem filmowym, pobieranie najpopularniejszych filmów
 
 import requests
-API_TOKEN = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmODczYzQ1MDc3YTNiOWE5ZjFhNjVlMjYyODlkYTU5MyIsInN1YiI6IjYxMTIwY" \
-            "2U4MGI1ZmQ2MDA1ZWVjNjIyZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.zs5nesL4qjL0n2cLC_hR" \
-            "tG9eGN-EiyP_Z8cm5R9NhVA"
+API_TOKEN = "Appi key"
 
 
 def get_headers():
